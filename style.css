@@ -1,0 +1,159 @@
+/* *******************************************************CSS CODE********************************************************** */
+
+/* ********Basic setup************ */
+body {
+    margin: 0px;
+}
+
+* {
+    box-sizing: border-box;
+}
+/* ******************************* */
+
+
+
+/* **********Menu Container styles************ */
+.menu_container {
+    border: 1px solid black;
+    height: 5rem;
+}
+
+
+
+
+/* ******************************************** */
+
+
+
+/* **************Formula Container Style*************** */
+
+.formula_container {
+    border: 1px solid black;
+    height: 2rem;
+}
+
+
+
+/* ****************************************************** */
+
+
+
+/* ***************Grid container style********************** */
+
+
+.grid_container {
+    /* If the screen size is decreasing or increasing => only grid conatiner change their size , not effect on any another container */
+    /* grid height is equal to remaining height */
+    /* calc is used to get variable length */
+    height: calc( 100vh - ( 5rem + 2rem + 2.5rem));
+    background-color: lightgreen;
+    /* overflow is used to stop overflow of content and add scroll bar automatically */
+    overflow: auto;
+    position: relative;
+    
+}
+
+/* left top box style */
+.top_left_block {
+    background-color: lightgray;
+}
+
+.block {
+    border: 1px solid;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+
+}
+
+.top_row {
+    display: flex;
+    position: absolute;
+    top:0px;
+    padding-left: 2rem;
+    
+}
+
+.grid {
+    position: absolute;
+    top:2rem;
+    padding-left: 2rem;
+
+}
+
+.left_col {
+
+}
+
+.cell {
+    height: 2rem;
+    border: 1px solid;
+    min-width: 5rem;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+}
+
+
+
+/* *************************************************************** */
+
+
+/* ****************Sheet Container style************************* */
+
+.sheets_container {
+    height: 2.5rem;
+    display: flex;
+}
+
+.icon_container {
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    height: 100%;
+}
+
+.fa-plus {
+    font-size: 1.2rem;
+    color: rgb(104, 103, 103);
+}
+
+.sheet_list {
+    width: 95%;
+    display: flex;
+    height: 100%;
+    overflow-x: auto;
+
+    /* Hide scroll bar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* To hide scroll bar of sheet list*/
+.sheet_list::-webkit-scrollbar {
+    display: none;
+}
+
+.sheet {
+    border: 1px solid;
+    height: 100%;
+    min-width: 5rem;
+    padding-top: 0.5rem;
+    padding-left: 0.6rem;
+    background-color: white;
+}
+
+.active {
+    background-color: lightgrey;;
+}
+
+/* ****************************************************************** */
+
+
+
+
+
