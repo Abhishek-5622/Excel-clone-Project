@@ -16,7 +16,7 @@ for (let i = 0; i < columns; i++) {
     //set text
     div.innerText = String.fromCharCode(65 + i);
     //set attribute
-    div.setAttribute("class", "cell");
+    div.setAttribute("class", "col_container");
     // append 
     topRow.appendChild(div);
 }
@@ -28,7 +28,7 @@ for (let i = 1; i <= rows; i++) {
     //set text
     div.innerText = i
     //set attribute
-    div.setAttribute("class", "block");
+    div.setAttribute("class", "row_container");
     // append 
     leftCol.appendChild(div);
 }
@@ -42,14 +42,16 @@ for (let i = 1; i <=rows; i++) {
 
     for (let j = 0; j < columns; j++) {
         //Create div
-        let div = document.createElement("div");
-        //set text
-        div.innerText =
-            `${i} ${String.fromCharCode(65 + j)}`;
+        let col = document.createElement("div");
+        // //set text
+        // col.innerText =
+        //     `${i} ${String.fromCharCode(65 + j)}`;
         //set attribute
-        div.setAttribute("class", "cell");
+        col.setAttribute("class", "grid_cell");
+        //type in cell
+        col.contentEditable="true";
         //append
-        row.appendChild(div);
+        row.appendChild(col);
     }
     //append rows to grid
     grid.appendChild(row);

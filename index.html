@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Excel</title> 
 
     <!-- Add css link to add different icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -16,18 +16,71 @@
 </head>
 
 <body>
+<!-- Nav Container -->
+    <div class="nav_container">
+        <i class="fas fa-file-excel"></i>
+        <div class="home nav">Home</div>
+        <div class="insert nav">Insert</div>
+        <div class="page_layout nav">Page Layout</div>
+        <div class="formula nav">Formula</div>
+        <div class="view nav">View</div>
+    </div>
+
 <!-- Menu container  -->
     <div class="menu_container">
-        Menu container
+       <div class="font_box">
+            <div class="font_style_container">
+                    
+                        <select id="font_family" class="font_family">
+                            <option value="Arial">Arial</option>
+                            <option value="Cambria">Cambria</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="monospace">monospace</option>
+                            <option value="sans-serif">sans-serif</option>
+                            <option value="fantasy">fantasy</option>
+                        </select>
+                    
+                    <div class="BUI_container">
+                        <input type="button" value="B" class="bold">
+                        <input type="button" value="I" class="Italic">
+                        <input type="button" value="U" class="underline">
+                    </div>
+            </div>
+            <div class="font_style_container">
+                <select id="font_size" class="font_size">
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="16">16</option>
+                    <option value="20">20</option>
+                    <option value="32">32</option>
+                    <option value="64">64</option>
+                </select>
+                <div class="color_container">
+                    <input type="color" class="color">
+                    <input type="color" class="bg-color">
+                </div>
+            </div>
+       </div>
+       <div class="font_box">
+        <div class="alignment_container">
+            <input type="button" value="L" class="left">
+            <input type="button" value="C" class="center">
+            <input type="button" value="R" class="right">
+        </div>
+
+       </div>
+      
     </div>
+
 <!-- Formula container -->
     <div class="formula_container">
         Formula container
     </div>
+
 <!-- Grid Container -->
     <div class="grid_container">
 
-        <div class="top_left_block block"></div>
+        <div class="top_left_block"></div>
         <div class="top_row"></div>
         <div class="left_col"></div>
 

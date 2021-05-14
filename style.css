@@ -11,15 +11,98 @@ body {
 /* ******************************* */
 
 
+/* *************Nav Bar*********************** */
+.nav_container{
+    height: 1.4rem;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+
+}
+
+.fa-file-excel{
+    color: blue;
+    padding-left: 1rem;
+}
+
+.nav{
+    margin: 1rem;
+    height: 95%;
+}
+
+.nav:hover{
+border: 1px solid black;
+}
+
+
+
+
+/* ******************************************** */
+
+
 
 /* **********Menu Container styles************ */
 .menu_container {
     border: 1px solid black;
     height: 5rem;
+    display: flex;
+    justify-content: flex-start;
+    background-color: rgb(111, 201, 232);
 }
 
+.font_box{
+    width:25%;
+    height: 90%;
+    display: flex;
+    border-right: 2px solid black;
+    margin-top: 0.2rem;
+}
 
+.font_style_container{
+    width: 50%;
+    margin: 0.8rem;
+}
 
+.font_family {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.BUI_container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.BUI_container>*{
+    width: 30%;
+}
+
+.color_container>*{
+    width: 40%;
+}
+
+.font_size{
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.color_container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.alignment_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+}
+.alignment_container>*{
+    width:20%;
+}
 
 /* ******************************************** */
 
@@ -45,8 +128,8 @@ body {
     /* If the screen size is decreasing or increasing => only grid conatiner change their size , not effect on any another container */
     /* grid height is equal to remaining height */
     /* calc is used to get variable length */
-    height: calc( 100vh - ( 5rem + 2rem + 2.5rem));
-    background-color: lightgreen;
+    height: calc( 100vh - ( 5rem + 2rem + 2.5rem + 1.4rem));
+    
     /* overflow is used to stop overflow of content and add scroll bar automatically */
     overflow: auto;
     position: relative;
@@ -56,13 +139,20 @@ body {
 /* left top box style */
 .top_left_block {
     background-color: lightgray;
-}
-
-.block {
     border: 1px solid;
     width: 2rem;
     height: 2rem;
-    text-align: center;
+}
+
+.row_container {
+    border: 1px solid;
+    width: 2rem;
+    height: 2rem;
+    /* text-align: center; */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgreen;
 
 }
 
@@ -71,7 +161,6 @@ body {
     position: absolute;
     top:0px;
     padding-left: 2rem;
-    
 }
 
 .grid {
@@ -85,15 +174,32 @@ body {
 
 }
 
-.cell {
+.col_container {
     height: 2rem;
     border: 1px solid;
     min-width: 5rem;
+    /* text-align: center; */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgreen;
+    
+    
+}
+
+.grid_cell {
+    min-height: 2rem;
+    border: 1px solid;
+    min-width: 5rem;
+    max-width: 5rem;
     text-align: center;
+    padding-top: 0.2rem;
+    
 }
 
 .row {
     display: flex;
+    
 }
 
 
@@ -115,11 +221,16 @@ body {
     justify-content: center;
     border: 1px solid;
     height: 100%;
+    
+}
+
+.icon_container:hover{
+    background-color: lightgray;
 }
 
 .fa-plus {
     font-size: 1.2rem;
-    color: rgb(104, 103, 103);
+    color: rgb(105, 105, 242)
 }
 
 .sheet_list {
@@ -148,7 +259,8 @@ body {
 }
 
 .active {
-    background-color: lightgrey;;
+    background-color: lightgrey;
+    border: 2px solid black;
 }
 
 /* ****************************************************************** */
