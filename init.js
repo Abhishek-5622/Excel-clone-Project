@@ -33,26 +33,46 @@ for (let i = 1; i <= rows; i++) {
     leftCol.appendChild(div);
 }
 
+//contain all cells info
+let sheetArr = [];
+
 //Create grid(100*26)
-for (let i = 1; i <=rows; i++) {
+for (let i = 0; i <=rows; i++) {
     //Create div
     let row = document.createElement("div");
     //set attribute
+    let rowArr = [];
     row.setAttribute("class", "row");
 
     for (let j = 0; j < columns; j++) {
         //Create div
-        let col = document.createElement("div");
-        // //set text
-        // col.innerText =
-        //     `${i} ${String.fromCharCode(65 + j)}`;
+        let cell = document.createElement("div");
+       
         //set attribute
-        col.setAttribute("class", "grid_cell");
+        cell.setAttribute("class", "grid_cell");
+        cell.setAttribute("rid", i);
+        cell.setAttribute("cid", j);
         //type in cell
-        col.contentEditable="true";
+        cell.setAttribute("contenteditable", "true");
         //append
-        row.appendChild(col);
+        row.appendChild(cell);
+        let cellObj = {
+            isBold: false,
+            isItalic:false,
+            isUnderline:false,
+            halign:"left",
+            fontFamily:"Arial",
+            fontSize:16,
+            color:"black",
+            bgcolor:"white"
+        }
+        rowArr.push(cellObj);
     }
-    //append rows to grid
     grid.appendChild(row);
+    sheetArr.push(rowArr);
 }
+console.log(sheetArr);
+
+
+
+
