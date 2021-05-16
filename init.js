@@ -1,13 +1,15 @@
-// ******************************JS CODE for Grid **************************************
+// ******************************************JAVASCRIPT CODE for Grid **************************************************
+
+//*************************Store Reference**********************************
+let topRow = document.querySelector(".top_row");
+let leftCol = document.querySelector(".left_col");
+let grid = document.querySelector(".grid");
+
+// **************************************************************************
 
 //set column no. and row number
 let columns = 26;
 let rows = 100;
-
-//Store Reference
-let topRow = document.querySelector(".top_row");
-let leftCol = document.querySelector(".left_col");
-let grid = document.querySelector(".grid");
 
 //Append columns to topRow(A B C D E F ......Z)
 for (let i = 0; i < columns; i++) {
@@ -33,6 +35,8 @@ for (let i = 1; i <= rows; i++) {
     leftCol.appendChild(div);
 }
 
+
+
 //contain all cells info
 let sheetArr = [];
 
@@ -47,7 +51,6 @@ for (let i = 0; i <=rows; i++) {
     for (let j = 0; j < columns; j++) {
         //Create div
         let cell = document.createElement("div");
-       
         //set attribute
         cell.setAttribute("class", "grid_cell");
         cell.setAttribute("rid", i);
@@ -56,6 +59,7 @@ for (let i = 0; i <=rows; i++) {
         cell.setAttribute("contenteditable", "true");
         //append
         row.appendChild(cell);
+        //create object of each cell
         let cellObj = {
             isBold: false,
             isItalic:false,
@@ -64,14 +68,21 @@ for (let i = 0; i <=rows; i++) {
             fontFamily:"Arial",
             fontSize:16,
             color:"black",
-            bgcolor:"white"
+            bgcolor:"white",
+            value:"",
+            formula:"",
+            children:[]
         }
+        //push cell object in rowArr
         rowArr.push(cellObj);
     }
+    //append row in grid
     grid.appendChild(row);
+    //push rowArr in sheetArr
     sheetArr.push(rowArr);
+
+    
 }
-console.log(sheetArr);
 
 
 

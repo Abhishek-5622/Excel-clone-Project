@@ -16,21 +16,30 @@
 </head>
 
 <body>
-<!-- Nav Container -->
+<!-- ********************************Nav Container********************************************* -->
     <div class="nav_container">
+        <!-- Add excel icon -->
         <i class="fas fa-file-excel"></i>
+        <!-- File option  -->
         <div class="file nav">File</div>
+        <!-- Home Option -->
         <div class="home nav">Home</div>
     </div>
 
-<!-- Menu container  -->
-<div class="menu-container">
-    <div class="nos-container">
-        <i class="far fa-envelope-open open menu-icon "></i>
-        <i class="fas fa-plus-circle new menu-icon"></i>
-        <i class="fas fa-file-download download menu-icon"></i>
+<!-- ************************************************************************************************ -->
+
+
+
+<!-- ********************************Menu container*************************************************  -->
+<div class="menu_container">
+    <!-- container that contains new open and safe icon -->
+    <div class="nos_container">
+        <i class="far fa-envelope-open open menu_icon "></i>
+        <i class="fas fa-plus-circle new menu_icon"></i>
+        <i class="fas fa-file-download download menu_icon"></i>
     </div>
-    <select name="" id="font-family" class="font-family">
+    <!-- Font Family  -->
+    <select name="" id="font_family" class="font_family">
         <option value="Arial">Arial</option>
         <option value="Cambria">Cambria</option>
         <option value="Georgia">Georgia</option>
@@ -38,53 +47,72 @@
         <option value="sans-serif">sans-serif</option>
         <option value="fantasy">fantasy</option>
     </select>
-    
-    <select name="" id="" class="font-size">
+    <!-- Font size -->
+    <select name="" id="" class="font_size">
         <option value="12">12</option>
         <option value="14">14</option>
         <option value="16" selected>16</option>
         <option value="18">18</option>
         <option value="22">22</option>
+        <option value="32">32</option>
+        <option value="64">64</option>
     </select>
-    
-    <div class="formatting-container">
-        <i class="fas fa-bold menu-icon"></i>
-        <i class="fas fa-italic menu-icon"></i>
-        <i class="fas fa-underline menu-icon"></i>
+    <!-- formating container that contains bold, italic and underline icon -->
+    <div class="formatting_container">
+        <i class="fas fa-bold menu_icon"></i>
+        <i class="fas fa-italic menu_icon"></i>
+        <i class="fas fa-underline menu_icon"></i>
     </div>
-    <div class="alignment-container">
-        <i class="fas fa-align-left menu-icon align menu-active " id="left"></i>
-        <i class="fas fa-align-justify menu-icon align" id="center"></i>
-        <i class="fas fa-align-right menu-icon align" id="right"></i>
+    <!-- alignment container contains left center right alignment icon -->
+    <div class="alignment_container">
+        <i class="fas fa-align-left menu-icon align menu_icon " id="left"></i>
+        <i class="fas fa-align-justify menu_icon align" id="center"></i>
+        <i class="fas fa-align-right menu_icon align" id="right"></i>
     </div>
-
+    <!-- it contains color and background color option -->
     <div class="color_box">
+        <!-- //color of text -->
         <input type="color" class="color">
+        <!-- background of cell -->
         <input type="color"class ="bgcolor">
     </div>
 </div>
-<!-- ***************************** -->
+<!-- ***************************************************************************************************************** -->
 
 
-<!-- Formula container -->
+<!-- *******************************************Formula container**************************************************** -->
     <div class="formula_container">
+        <!-- address bar -->
         <input type="text" name="" id="" class="address_bar">
+        <!-- seperator div -->
         <div class="seperator">:</div>
+        <!-- formula bar -->
         <input type="text" name="" id="" class="formula_bar">
     </div>
 
-<!-- Grid Container -->
+<!-- ***************************************************************************************************************** -->
+
+
+<!-- *******************************************Grid Container******************************************************** -->
+
     <div class="grid_container">
-
+        <!-- top left block  -->
         <div class="top_left_block"></div>
+        <!-- //top row ( A,B,C,D......Z) -->
         <div class="top_row"></div>
+        <!-- left row (1,2,3,.....100) -->
         <div class="left_col"></div>
+        <!-- grid of 100 * 26 -->
+        <div class="grid">
 
-        <div class="grid"></div>
+        </div>
 
     </div>
+<!-- ****************************************************************************************************************** -->
 
-<!-- Sheet container -->
+
+<!-- ************************************************Sheet container*************************************************** -->
+
     <div class="sheets_container">
         <!-- Icon container contains plus icon -->
         <div class="icon_container">
@@ -95,16 +123,18 @@
             <!-- First sheet -->
             <div class="sheet active" idx="1">Sheet-1</div>
 
-            <!-- Other sheets are created when we click on plus icon (code writen in js) -->
+            <!-- Other sheets are created when we click on plus icon (code writen in script.js file) -->
 
         </div>
     </div>
+<!-- ******************************************************************************************************************** -->
 
-    <!-- Add scripts -->
-    
+    <!-- Add scripts file -->
     <script src="init.js" defer></script>
     <script src="format.js" defer></script>
     <script src=" script.js " defer></script>
+    <script src=" formula.js " defer></script>
+
 </body>
 
 </html>

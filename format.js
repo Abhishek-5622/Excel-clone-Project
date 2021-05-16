@@ -1,6 +1,6 @@
-// ******************************************Formatting JS*****************************************
+// ******************************************Formatting JAVASCRIPT CODE**********************************************
 
-//Store reference
+//**********************Store reference*******************************
 let Allcells = document.querySelectorAll(".grid_cell");
 let addressElem = document.querySelector(".address_bar");
 let bold = document.querySelector(".fa-bold");
@@ -10,10 +10,13 @@ let leftBtn = document.querySelector("#left");
 let rightBtn = document.querySelector("#right");
 let centerBtn = document.querySelector("#center");
 let align = document.querySelectorAll(".align");
-let fontSizeBtn = document.querySelector(".font-size");
-let fontFamilyBtn =  document.querySelector(".font-family");
+let fontSizeBtn = document.querySelector(".font_size");
+let fontFamilyBtn =  document.querySelector(".font_family");
 let color = document.querySelector(".color");
 let bgcolor = document.querySelector(".bgcolor");
+let formulabar = document.querySelector(".formula_bar");
+
+// *********************************************************************
 
 //add event listener when we click on bold
 bold.addEventListener("click", function () {
@@ -23,19 +26,19 @@ bold.addEventListener("click", function () {
     let { rid, cid } = getRIdIdfromAddress();
     // create cell object
     let cellObj = sheetArr[rid][cid];
-    //if isbold is true
+    //if isbold is true => BOLD button is already click
     if (cellObj.isBold == true) {
-        //remove bold
-        uiCell.style.fontWeight = "normal";///add feature
+        //remove bold style
+        uiCell.style.fontWeight = "normal";//add feature/effect
         //remove active class
-        bold.classList.remove("menu-active");//add effect on ui
+        bold.classList.remove("menu_active");//add effect on ui
         //set false in cellobj
         cellObj.isBold = false;//add on db
     } else {
         //set bold
         uiCell.style.fontWeight = "bold";
         //add class
-        bold.classList.add("menu-active");
+        bold.classList.add("menu_active");
         //set in cellObj
         cellObj.isBold = true;
     }
@@ -51,17 +54,17 @@ italic.addEventListener("click", function () {
     let cellObj = sheetArr[rid][cid];
     //if isitalic is true
     if (cellObj.isItalic == true) {
-        //remove bold
+        //remove italic
         uiCell.style.fontStyle = "normal";///add feature
         //remove active class
-        italic.classList.remove("menu-active");//add effect on ui
+        italic.classList.remove("menu_active");//add effect on ui
         //set false in cellobj
         cellObj.isItalic = false;//add on db
     } else {
         //set italic
         uiCell.style.fontStyle = "italic";
-        //add class
-        italic.classList.add("menu-active");
+        //add cactive class
+        italic.classList.add("menu_active");
         //set in cellObj
         cellObj.isItalic = true;
     }
@@ -77,17 +80,17 @@ underline.addEventListener("click", function () {
     let cellObj = sheetArr[rid][cid];
     //if isunderline is true
     if (cellObj.isUnderline == true) {
-        //remove bold
+        //remove underline
         uiCell.style.textDecoration = "none";///add feature
         //remove active class
-        underline.classList.remove("menu-active");//add effect on ui
+        underline.classList.remove("menu_active");//add effect on ui
         //set false in cellobj
         cellObj.isUnderline = false;//add on db
     } else {
         //set underline
         uiCell.style.textDecoration = "underline";
         //add class
-        underline.classList.add("menu-active");
+        underline.classList.add("menu_active");
         //set in cellObj
         cellObj.isUnderline = true;
     }
@@ -110,25 +113,29 @@ for(let i=0;i<align.length;i++)
         //remove active class from all align box
         for(let j=0;j<align.length;j++)
         {
-            align[j].classList.remove("menu-active");
+            align[j].classList.remove("menu_active");
         }
         
         if(cellObj.halign==currAlign)
         {
+            //default behaviour (left)
             uiCell.style.textAlign="left";
             cellObj.halign="left";
         }
        
         else{
+            //set alignment
             uiCell.style.textAlign=currAlign;
+            //set in cell object
             cellObj.halign=currAlign;
-            alignBtn.classList.add("menu-active");
+            //add active class
+            alignBtn.classList.add("menu_active");
         }
 
     })
 }
 
-//add event listener when we select family
+//add event listener when we select font family
 fontFamilyBtn.addEventListener("change", function () {
     //get value
     let fontFamilyValue = fontFamilyBtn.value;
@@ -141,16 +148,13 @@ fontFamilyBtn.addEventListener("change", function () {
     //set font family in ui
     uiCell.style.fontFamily=fontFamilyValue;
     //set font family in db
-    cellObj.fontFamily = fontFamilyValue;//add on db
-    
+    cellObj.fontFamily = fontFamilyValue;//add on db   
 })
 
 //add event listener when we select size
 fontSizeBtn.addEventListener("change", function () {
     //get value
     let fontSizeValue = fontSizeBtn.value;
-    console.log(fontSizeValue);
-
     // get row id and column id from address and get cell
     let uiCell = getcell();
     //get row id and column id
@@ -221,7 +225,7 @@ function getRIdIdfromAddress() {
 for (let i = 0; i < Allcells.length; i++) {
     //click on any cell
     Allcells[i].addEventListener("click", function () {
-        //fet attribute
+        //fetch attribute
         let cid = Allcells[i].getAttribute("cid");
         let rid = Allcells[i].getAttribute("rid");
         //convert into number
@@ -233,39 +237,39 @@ for (let i = 0; i < Allcells.length; i++) {
         let cellObj = sheetArr[rid][cid];
         //check that cell is bold or not
         if (cellObj.isBold==true) {
-            bold.classList.add("menu-active");
+            bold.classList.add("menu_active");
         }else{
-            bold.classList.remove("menu-active"); 
+            bold.classList.remove("menu_active"); 
         }
 
         //check that cell is italic or not
         if (cellObj.isItalic==true) {
-            italic.classList.add("menu-active");
+            italic.classList.add("menu_active");
         }else{
-            italic.classList.remove("menu-active"); 
+            italic.classList.remove("menu_active"); 
         }
 
         //check that cell is underline or not
         if (cellObj.isUnderline==true) {
-            underline.classList.add("menu-active");
+            underline.classList.add("menu_active");
         }else{
-            underline.classList.remove("menu-active"); 
+            underline.classList.remove("menu_active"); 
         }
 
         //For Alignment
         //remove active class
         for (let i = 0; i < align.length; i++) {
-            align[i].classList.remove("menu-active");
+            align[i].classList.remove("menu_active");
         }
         //For Left alignment
         if (cellObj.halign == "left") {
-            leftBtn.classList.add("menu-active")
+            leftBtn.classList.add("menu_active")
         //For right alignment
         } else if (cellObj.halign == "right") {
-            rightBtn.classList.add("menu-active")
+            rightBtn.classList.add("menu_active")
         //For center alignment
         } else if (cellObj.halign == "center") {
-            centerBtn.classList.add("menu-active")
+            centerBtn.classList.add("menu_active")
         }
         
         //For Font Family
@@ -279,6 +283,9 @@ for (let i = 0; i < Allcells.length; i++) {
 
         //For background
         bgcolor.value=cellObj.bgcolor;
+
+        //for formula bar
+        formulabar.value=cellObj.formula;
     }
     )
 }

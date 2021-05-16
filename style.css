@@ -1,6 +1,6 @@
 /* *******************************************************CSS CODE********************************************************** */
 
-/* ********Basic setup************ */
+/* ************************************Basic setup******************************** */
 body {
     margin: 0px;
 }
@@ -8,16 +8,16 @@ body {
 * {
     box-sizing: border-box;
 }
-/* ******************************* */
+/* ******************************************************************************** */
 
 
-/* *************Nav Bar*********************** */
+/* **********************************Nav Bar*************************************** */
+
 .nav_container{
     height: 1.4rem;
     border: 1px solid black;
     display: flex;
     align-items: center;
-
 }
 
 .fa-file-excel{
@@ -35,65 +35,66 @@ border: 1px solid black;
 }
 
 
-
-
-/* ******************************************** */
+/* ******************************************************************************* */
 
 
 
-/* **********Menu Container styles************ */
-.menu-container {
+/* *****************************Menu Container styles***************************** */
+
+.menu_container {
     height: 3rem;
     display: flex;
     align-items: center;
-    /* background-color: lightblue; */
-    /* display: inline; */
 }
 
-.menu-container>*{
+.menu_container>*{
     height:80%;
-    /* border:1px solid; */
 }
-.nos-container{
+
+.nos_container{
     width:25%; 
 }  
-.font-size{
+
+.font_size{
     width: 6%
 }
-.font-family{
+
+.font_family{
     width: 11%;
     margin-right: 1.7rem;
 }
-.alignment-container{
+
+.alignment_container{
     width:18%;
 }
 
 .color_box{
     width:10%;
 } 
-.formatting-container{
+.formatting_container{
     width:18%;
  
 }
-.menu-icon{
+.menu_icon{
     font-size: 130%;
     color:grey;
 }
-.formatting-container,.alignment-container,.nos-container,.color_box{
+
+.formatting_container,.alignment_container,.nos_container,.color_box{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.menu-active{
+.menu_active{
     color:black;
 }
 
-/* ******************************************** */
+/* ****************************************************************************************** */
 
 
 
-/* **************Formula Container Style*************** */
+/* ******************************Formula Container Style************************************* */
 
 .formula_container {
     border: 1px solid black;
@@ -103,38 +104,39 @@ border: 1px solid black;
     align-items: center;
     gap:2rem;
     justify-content: center;
-
 }
+
 .formula_container>*
 {
     height:74%;
 }
+
 .formula_bar{
     width: 74%;;
 }
+
 .address_bar{
     width:12%;
 }
+
 .seperator{
     width:3%;
 }
-/* ****************************************************** */
+
+/* ******************************************************************************************* */
 
 
 
-/* ***************Grid container style********************** */
-
+/* ******************************Grid container style***************************************** */
 
 .grid_container {
     /* If the screen size is decreasing or increasing => only grid conatiner change their size , not effect on any another container */
     /* grid height is equal to remaining height */
     /* calc is used to get variable length */
     height: calc( 100vh - ( 5rem + 2rem + 2.5rem + 1.4rem));
-    
     /* overflow is used to stop overflow of content and add scroll bar automatically */
     overflow: auto;
     position: relative;
-    
 }
 
 /* left top box style */
@@ -149,12 +151,10 @@ border: 1px solid black;
     border: 1px solid;
     width: 2rem;
     height: 2rem;
-    /* text-align: center; */
     display:flex;
     justify-content: center;
     align-items: center;
     background-color: lightgreen;
-
 }
 
 .top_row {
@@ -168,7 +168,6 @@ border: 1px solid black;
     position: absolute;
     top:2rem;
     padding-left: 2rem;
-
 }
 
 .left_col {
@@ -179,13 +178,10 @@ border: 1px solid black;
     height: 2rem;
     border: 1px solid;
     min-width: 5rem;
-    /* text-align: center; */
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: lightgreen;
-    
-    
+    background-color: lightgreen;    
 }
 
 .grid_cell {
@@ -194,20 +190,18 @@ border: 1px solid black;
     min-width: 5rem;
     max-width: 5rem;
     padding-top: 0.2rem;
-    
 }
 
 .row {
     display: flex;
-    
 }
 
 
 
-/* *************************************************************** */
+/* **************************************************************************************************** */
 
 
-/* ****************Sheet Container style************************* */
+/* ********************************Sheet Container style************************************************ */
 
 .sheets_container {
     height: 2.5rem;
@@ -221,7 +215,6 @@ border: 1px solid black;
     justify-content: center;
     border: 1px solid;
     height: 100%;
-    
 }
 
 .icon_container:hover{
@@ -263,7 +256,7 @@ border: 1px solid black;
     border: 2px solid black;
 }
 
-/* ****************************************************************** */
+/* *************************************************************************************************** */
 
 
 

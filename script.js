@@ -1,9 +1,12 @@
-// ******************************JAVASCRIPT CODE***********************************
+// *********************************************JAVASCRIPT CODE For ADD SHEETS****************************************************
 
-//Store References
+//*************Store References*****************
 let iconContainer = document.querySelector(".icon_container");
 let sheetList = document.querySelector(".sheet_list");
 let firstSheet = document.querySelector(".sheet");
+
+// *********************************************
+
 
 //Add Event listener when we click on first sheet(Remove active class from all sheet and set active class to sheet which has been clicked)
 firstSheet.addEventListener("click", handleClick);
