@@ -147,8 +147,12 @@ function evaluateFormula(cFormula) {
     //join array on the base of space
     let finalFormula = formulaTokens.join(" ");
     //return value that calculated by formula
-    //eval is predefine function
-    return eval(finalFormula);
+    //eval is predefine function = > but not use because anyone can change eval function easily.
+    // return eval(finalFormula);
+
+    //infixEval is used to find value of formula
+    let value = infixEval(finalFormula);
+    return value;
 
 
 }
@@ -186,4 +190,128 @@ function setCell(val, rid, cid, cFormula) {
     cellObj.value = val;
     //set formula in db
     cellObj.formula = cFormula;
+}
+
+
+
+//Create custom stack
+class myStack {
+    constructor() {
+        this.arr = [];
+        this.s = -1;
+    }
+    //push function is used to add integer
+    push(x){
+        this.arr.push(x);
+        this.s++;
+    }
+    //pop function is used to remove integer
+    pop(){
+        if(this.s==-1)return "err";
+        this.s--;
+        return this.arr.pop();
+    }
+    //peek function is used to see top integer
+    peek(){
+        if(this.s==-1)return "err";
+        return this.arr[this.s];
+    }
+    //size function is used to get size of stack
+    size(){
+        return this.s+1;
+    }
+
+
+}
+
+//function is used to solve formula and get value
+function infixEval(formula) {
+    //split on the bases of space
+    let exp = formula.split(" ");
+    //create stack
+    let operands = new myStack();
+    let operators = new myStack();
+    //traverse in exp array
+    for (let i = 0; i < exp.length; i++) {
+        //get items of array
+        let ch = exp[i];
+
+        if (ch == '(') {
+            operators.push(ch);
+        } 
+        //check it is number or not
+        else if (isNumber(ch)) {
+            operands.push(parseInt(ch));
+        } 
+
+        else if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
+
+            while (operators.size() > 0 && operators.peek() != '(' && precedence(ch) <= precedence(operators.peek())) {
+                let val2 = operands.pop();
+                let val1 = operands.pop();
+                let op = operators.pop();
+
+                let opval = operation(val1, val2, op);
+                operands.push(opval);
+            }
+
+            operators.push(ch);
+        } else if (ch == ')') {
+            while (operators.size() > 0 && operators.peek() != '(') {
+                let val2 = operands.pop();
+                let val1 = operands.pop();
+                let op = operators.pop();
+
+                let opval = operation(val1, val2, op);
+                operands.push(opval);
+            }
+
+            if (operators.size() > 0) {
+                operators.pop();
+            }
+        }
+    }
+
+    while (operators.size() > 0) {
+        let val2 = operands.pop();
+        let val1 = operands.pop();
+        let op = operators.pop();
+
+        let opval = operation(val1, val2, op);
+        operands.push(opval);
+    }
+
+    let val = operands.pop();
+    return val;
+}
+
+// function that given precedence value
+function precedence(op) {
+    if (op == '+') {
+        return 1;
+    } else if (op == '-') {
+        return 1;
+    } else if (op == '*') {
+        return 2;
+    } else {
+        return 2;
+    }
+}
+
+//function that solve operation
+function operation(val1, val2, op) {
+    if (op == '+') {
+        return val1 + val2;
+    } else if (op == '-') {
+        return val1 - val2;
+    } else if (op == '*') {
+        return val1 * val2;
+    } else {
+        return val1 / val2;
+    }
+}
+
+//check it is number or not
+function isNumber(n) { 
+    return !isNaN(parseInt(n)) 
 }

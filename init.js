@@ -80,7 +80,6 @@ for (let i = 0; i <=rows; i++) {
     grid.appendChild(row);
     //push rowArr in sheetArr
     sheetArr.push(rowArr);
-
     
 }
 
