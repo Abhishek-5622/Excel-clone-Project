@@ -37,6 +37,7 @@
         <i class="far fa-envelope-open open menu_icon "></i>
         <i class="fas fa-plus-circle new menu_icon"></i>
         <i class="fas fa-file-download download menu_icon"></i>
+        <input type="file" class="file-taker" style="display: none;">
     </div>
     <!-- Font Family  -->
     <select name="" id="font_family" class="font_family">
@@ -86,8 +87,14 @@
         <input type="text" name="" id="" class="address_bar">
         <!-- seperator div -->
         <div class="seperator">:</div>
-        <!-- formula bar -->
+        <!-- function bar container -->
+        <div class="function_bar_container">
+            <!-- image of function -->
+            <img src="images.png" class="function_img">
+            <!-- formula bar -->
         <input type="text" name="" id="" class="formula_bar" placeholder="Write formula">
+        </div>
+        
     </div>
 
 <!-- ***************************************************************************************************************** -->
@@ -104,6 +111,15 @@
         <div class="left_col"></div>
         <!-- grid of 100 * 26 -->
         <div class="grid">
+
+            <div class="file_name_container">
+                <h2><center><i class="fas fa-file-excel"></i> Excel</center></h2>
+                File Name : <input type ="text" placeholder="File Name" id="file_name">
+            <div class="bt_container">
+                <button class="Save">Save</button>
+                <button class="Cancel">Cancel</button>
+            </div>
+            </div>
 
         </div>
 
@@ -131,10 +147,11 @@
 
     <!-- Add scripts file -->
     <script src="init.js" defer></script>
-    <script src="format.js" defer></script>
     <script src=" script.js " defer></script>
+    <script src="format.js" defer></script>
+    
     <script src=" formula.js " defer></script>
-
+    <script src="newOpenSave.js" defer></script>
 </body>
 
 </html>

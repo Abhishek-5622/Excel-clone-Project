@@ -42,6 +42,7 @@ border: 1px solid black;
 /* *****************************Menu Container styles***************************** */
 
 .menu_container {
+    background-color: rgb(243, 252, 255);
     height: 3rem;
     display: flex;
     align-items: center;
@@ -98,7 +99,7 @@ border: 1px solid black;
 
 .formula_container {
     border: 1px solid black;
-    background-color: rgb(181, 240, 181);
+    
     height: 2rem;
     display: flex;
     align-items: center;
@@ -111,10 +112,17 @@ border: 1px solid black;
     height:74%;
 }
 
-.formula_bar{
-    width: 74%;;
+.function_bar_container{
+    width: 74%;
 }
 
+.formula_bar{
+    width: 95%;
+    margin-left: 0.2rem;
+}
+.function_img{
+    color: black;
+}
 .address_bar{
     width:12%;
 }
@@ -122,7 +130,12 @@ border: 1px solid black;
 .seperator{
     width:3%;
 }
-
+.function_img
+{
+    width: 1rem;
+    height: 1rem;
+    padding-top: 0.3rem;
+}
 /* ******************************************************************************************* */
 
 
@@ -144,17 +157,17 @@ border: 1px solid black;
     background-color: lightgray;
     border: 1px solid;
     width: 2rem;
-    height: 2rem;
+    height: 1.5rem;
 }
 
 .row_container {
     border: 1px solid;
     width: 2rem;
-    height: 2rem;
+    height: 1.5rem;
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: lightgreen;
+    background-color: rgb(243, 252, 255);
 }
 
 .top_row {
@@ -166,7 +179,7 @@ border: 1px solid black;
 
 .grid {
     position: absolute;
-    top:2rem;
+    top:1.5rem;
     padding-left: 2rem;
 }
 
@@ -175,17 +188,17 @@ border: 1px solid black;
 }
 
 .col_container {
-    height: 2rem;
+    height: 1.5rem;
     border: 1px solid;
     min-width: 5rem;
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: lightgreen;    
+    background-color:rgb(243, 252, 255);
 }
 
 .grid_cell {
-    min-height: 2rem;
+    min-height: 1.5rem;
     border: 1px solid;
     min-width: 5rem;
     max-width: 5rem;
@@ -196,8 +209,37 @@ border: 1px solid black;
     display: flex;
 }
 
+.file_name_container{
+    top:3rem;
+    left:20%;
+    position: absolute;
+    width:20%;
+    height: 7%;
+    border: 2px solid black;
+    background-color: rgb(193, 193, 248);
+    padding: 1rem;
+    display: none;
+}
+#file_name{
+width: 75%;
+margin-bottom: 1rem;
+}
+.bt_container{
+    padding-left: 8rem;
+}
+.Save{
+    margin-right: 1rem;
+}
+.open:hover{
+    color: black;
+}
 
-
+.new:hover{
+    color: black;
+}
+.download:hover{
+    color: black;
+}
 /* **************************************************************************************************** */
 
 

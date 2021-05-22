@@ -24,11 +24,11 @@ for (let i = 0; i < columns; i++) {
 }
 
 //Append row to leftRow(1 2 3 4......100)
-for (let i = 1; i <= rows; i++) {
+for (let i = 0; i < rows; i++) {
     //Create div
     let div = document.createElement("div");
     //set text
-    div.innerText = i
+    div.innerText = i+1;
     //set attribute
     div.setAttribute("class", "row_container");
     // append 
@@ -37,15 +37,20 @@ for (let i = 1; i <= rows; i++) {
 
 
 
-//contain all cells info
-let sheetArr = [];
 
+//create database of worksheet
+sheetListArr = [];
+
+function initCurrentSheetDb() {
+let sheetArr = [];
 //Create grid(100*26)
-for (let i = 0; i <=rows; i++) {
+for (let i = 0; i <rows; i++) {
+    
     //Create div
     let row = document.createElement("div");
-    //set attribute
+    //create row array
     let rowArr = [];
+    //set attribute
     row.setAttribute("class", "row");
 
     for (let j = 0; j < columns; j++) {
@@ -82,7 +87,8 @@ for (let i = 0; i <=rows; i++) {
     sheetArr.push(rowArr);
     
 }
+sheetListArr.push(sheetArr);
+}
 
-
-
-
+initCurrentSheetDb();
+console.log(sheetListArr);
