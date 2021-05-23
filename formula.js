@@ -20,7 +20,7 @@ for (let i = 0; i < Allcells.length; i++) {
         updateChildren(cellObj);
 
         // isformulacyclic
-
+        
         //if formula is present in cell object => or tab bhi we click on formula bar => 2 possibilty occur
         // 1. we want to chnage formula
         // 2 we want to remove formula from formula bar 
@@ -94,17 +94,31 @@ formulabar.addEventListener("keydown", function (e) {
     //if we press enter and formula bar is not empty.
     if (e.key == "Enter" && formulabar.value != "") {
         //get formula
+
         let cFormula = formulabar.value;
         //get row id and column id
         let { rid, cid } = getRIdIdfromAddress();
         //create cell object
         let cellObj = sheetArr[rid][cid];
+        let oldFormula =cellObj.formula;
         //if formula present in formula bar is same as formula present cell object => nothing to do.
         if(cellObj.formula==cFormula){
             return;
         }
-
+setFormula(cFormula, addressElem.value)
         // isformulaCylic
+//if cycle detected remove new formula and add old formula
+if (isCycle(addressElem.value, cFormula)) {
+    removeFormula(addressElem.value, cellObj);
+
+    //set old formula
+    setFormula(oldFormula, addressElem.value)
+    cellObj.formula = oldFormula;
+    formulabar.value = oldFormula;
+
+    alert("cycle detected, formula didn't update");
+    return;
+}
 
         //if formula is present in cell object => or tab bhi we click on formula bar => 2 possibilty occur
         // 1. we want to chnage formula
@@ -314,4 +328,50 @@ function operation(val1, val2, op) {
 //check it is number or not
 function isNumber(n) { 
     return !isNaN(parseInt(n)) 
+}
+
+// isCycle(A1 , C1+1)
+let isCycle = function (cellID,formula) {
+    let formulaArr = formula.split(" ");
+    
+    console.log(cellID);
+    
+    let cell = getcellForFormula(cellID);
+    let rid = cell.getAttribute("rid");
+    let cid = cell.getAttribute("cid");
+    let cellObj = sheetArr[rid][cid];
+    let children = cellObj.children;//[c1]
+
+    for (let i = 0; i < children.length; i++) {
+        let childID = children[i];//c1
+        for (let j = 0; j < formulaArr.length; j++) {
+            let ascii = formulaArr[j].charCodeAt(0);
+            if (ascii >= 65 && ascii <= 90) {
+                let parentCellID = formulaArr[j];//c1
+                
+                if (parentCellID==childID) {
+                    console.log("i have child");
+                    return true;
+                }
+            }
+        }
+//         console.log("child"+childID);
+//         cell = getcellForFormula(childID);
+//     rid = cell.getAttribute("rid");
+//     cid = cell.getAttribute("cid");
+//     cellObj = sheetArr[rid][cid];
+//     formula= cellObj.formula;
+// console.log("form"+formula)
+        return isCycle(childID,formula);
+    }
+
+    return false;
+};
+
+function getcellForFormula(address) {
+    
+    //get row id and column id
+    let { rid, cid } = getRIdIdfromAddress(address);
+    //return cell
+    return document.querySelector(`.grid_cell[rid="${rid}"][ cid="${cid}"]`)
 }

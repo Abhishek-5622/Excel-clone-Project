@@ -36,18 +36,14 @@ iconContainer.addEventListener("click", function() {
     allSheets = document.querySelectorAll(".sheet");
     //remove active class from all sheets and add active class to particular sheet which is newly created.
     setLastActive(allSheets);
-
-    // create new sheet grid with all default values. 
+    // create new sheet grid with all default values of cell. 
     initCurrentSheetDb();
     //get sheet database from worksheet database.
     sheetArr = sheetListArr[idx];
-    
     // new page cell value get empty and get default formatting
     initUI();
     //Add event listener to new sheet
     newSheet.addEventListener("click", handleClick);
-
-    
 })
 
 //function is used to remove active class from all sheets and add active class to particular sheet which is newly created.

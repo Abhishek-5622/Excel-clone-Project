@@ -32,11 +32,12 @@
 
 <!-- ********************************Menu container*************************************************  -->
 <div class="menu_container">
-    <!-- container that contains new open and safe icon -->
+    <!-- container that contains new, open and safe icon -->
     <div class="nos_container">
         <i class="far fa-envelope-open open menu_icon "></i>
         <i class="fas fa-plus-circle new menu_icon"></i>
         <i class="fas fa-file-download download menu_icon"></i>
+        <!-- input of type file -->
         <input type="file" class="file-taker" style="display: none;">
     </div>
     <!-- Font Family  -->
@@ -112,9 +113,14 @@
         <!-- grid of 100 * 26 -->
         <div class="grid">
 
+            <!-- file name container -->
             <div class="file_name_container">
+                <!-- heading -->
                 <h2><center><i class="fas fa-file-excel"></i> Excel</center></h2>
-                File Name : <input type ="text" placeholder="File Name" id="file_name">
+                <!-- input option for enter file name -->
+                File Name : 
+                <input type="text" name="" id="file_name" value="Excel" placeholder="File Name">
+                <!-- btncontainer that save and cancel button -->
             <div class="bt_container">
                 <button class="Save">Save</button>
                 <button class="Cancel">Cancel</button>
@@ -146,10 +152,10 @@
 <!-- ******************************************************************************************************************** -->
 
     <!-- Add scripts file -->
+    <!-- defer => first run html , css the js -->
     <script src="init.js" defer></script>
     <script src=" script.js " defer></script>
     <script src="format.js" defer></script>
-    
     <script src=" formula.js " defer></script>
     <script src="newOpenSave.js" defer></script>
 </body>

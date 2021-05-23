@@ -1,4 +1,4 @@
-// ******************************************JAVASCRIPT CODE for Grid **************************************************
+// ******************************************JAVASCRIPT CODE for Grid and database**************************************************
 
 //*************************Store Reference**********************************
 let topRow = document.querySelector(".top_row");
@@ -38,10 +38,12 @@ for (let i = 0; i < rows; i++) {
 
 
 
-//create database of worksheet
+//create database of all sheets
 sheetListArr = [];
 
+//function that is used to create sheet database for one sheet
 function initCurrentSheetDb() {
+//create sheetArr that contain information of all cell of sheet
 let sheetArr = [];
 //Create grid(100*26)
 for (let i = 0; i <rows; i++) {
@@ -87,8 +89,9 @@ for (let i = 0; i <rows; i++) {
     sheetArr.push(rowArr);
     
 }
+//add sheet database to all sheet database
 sheetListArr.push(sheetArr);
 }
 
+// create new sheet grid with all default values of cell. 
 initCurrentSheetDb();
-console.log(sheetListArr);

@@ -184,7 +184,7 @@ border: 1px solid black;
 }
 
 .left_col {
-
+position: sticky;
 }
 
 .col_container {
