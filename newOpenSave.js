@@ -16,12 +16,12 @@ let fileName = document.querySelector("#file_name");
 download.addEventListener("click", function () {
     //display file name container
     fileNameContainer.style.display="block";
-    //get file name
-    let Fname = fileName.value;
-    console.log(Fname);
+    
     //click on safe
     Save.addEventListener("click",function()
     {
+        //get file name
+        let Fname = fileName.value;
         //if file name is not enter => alert message come
         if(Fname=="")
         {
